@@ -1,0 +1,41 @@
+  import java.util.Scanner;
+
+public class Solution {
+  public static void main(String[] args) {
+    
+        Scanner scan = new Scanner(System.in);
+        String a = scan.next();
+        String b = scan.next();
+        scan.close();
+        boolean ret = isAnagram(a, b);
+        System.out.println( (ret) ? "Anagrams" : "Not Anagrams" );
+    }
+        static boolean isAnagram(String a, String b) {
+        // Complete the function
+        boolean result=false;
+        String str1=a.replaceAll("\\s","").toLowerCase();
+        String str2=b.replaceAll("\\s","").toLowerCase();
+       /** Using Arrays
+       if(str1.length()!=str2.length()){
+            result=false;
+        }else{
+            char[] str1Arr=str1.toCharArray();
+            char[] str2Arra=str2.toCharArray();
+            result=Arrays.equals(str1Arr,str2Arra);
+        }**/
+        //without Arrays
+        if(str1!=null && str2!=null & str1.length()==str2.length()){
+            char[] str1Arr=str1.toCharArray();
+            StringBuilder str2Builder=new StringBuilder(str2);
+            for(char ch:str1Arr){
+                int index=str2Builder.indexOf(""+ch);
+                if(index!=-1){
+                    str2Builder.deleteCharAt(index);
+                }
+            }
+            result=str2Builder.toString().isEmpty();
+        }
+        return result;
+    }
+}
+
