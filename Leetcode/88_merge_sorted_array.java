@@ -1,3 +1,16 @@
+/*
+ Time complexity- O(m+n), as we iterate while loop for m+n times
+ Space complexity -O(1)
+
+ The first while loop runs as long as both i and j are ≥ 0.
+In total, it executes at most m + n iterations (since each iteration decrements either i or j).
+
+The second while loop runs only when some elements of nums2 remain.
+This can happen only when the first loop finishes early — but overall, across both loops,
+each element from both arrays is visited exactly once.
+
+*/
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
