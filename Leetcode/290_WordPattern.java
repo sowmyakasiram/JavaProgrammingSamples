@@ -1,7 +1,10 @@
 //time complexity O(n)
 //space complexity O(n)+O(n)=O(2n)=O(n)
 // we use set and map in same loop, so it makes O(n)
+/*Time: O(n) where n = number of words (or pattern length).
 
+Space: O(n) for the Map + Set
+    */
 
 class Solution {
     public boolean wordPattern(String pattern, String s) {
